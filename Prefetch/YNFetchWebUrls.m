@@ -22,29 +22,30 @@
     
     if (cachedResp != nil) {
         if (completion) {
+            NSLog(@"Loading from cache");
             completion(cachedResp);
         }
         return;
     } else {
+        NSLog(@"Loading remote resource");
         
         NSURLConnection *connection=[[NSURLConnection alloc] initWithRequest:request delegate:nil];
         if (connection)
         {
             [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue new] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                 
+                NSLog(@"Response headers: %@",[(NSHTTPURLResponse *)response allHeaderFields]);
+                
                 NSCachedURLResponse *cachedResp = nil;
-                NSURL *finalURL = nil;
                 
                 if (connectionError == nil) {
-                    finalURL = [response URL];
                     
-                    NSCachedURLResponse *cachedResp = [[NSCachedURLResponse alloc] initWithResponse:response data:data];
+                    cachedResp = [[NSCachedURLResponse alloc] initWithResponse:response data:data userInfo:nil storagePolicy:NSURLCacheStorageAllowedInMemoryOnly];
                     [cache storeCachedResponse:cachedResp forRequest:request];
                 }
                 
                 if (completion) {
-                    completion(cachedResp);
-                }
+                    completion(cachedResp);                }
                 
             }];
             
