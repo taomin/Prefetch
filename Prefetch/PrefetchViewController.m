@@ -22,9 +22,9 @@
     [super viewDidLoad];
     [self createWebView];
     self.urlMap = @{
-        @"link 1": @"https://github.com/yahoo/validatar",
-        @"link 2": @"https://medium.com/@bchesky/7-rejections-7d894cbaa084",
-        @"link 3": @"http://www.newyorker.com/magazine/2015/07/20/the-really-big-one",
+        @"link 1": @"http://tcrn.ch/1K5g50v",
+        @"link 2": @"http://goo.gl/UeLDZj",
+        @"link 3": @"http://www.forbes.com/sites/amitchowdhry/2015/07/14/zidisha-helps-connect-lenders-with-entrepreneurs-in-developing-countries/",
         @"link 4": @"https://github.com/FormidableLabs/radium/blob/master/docs/comparison/README.md",
         @"link 5": @"http://yhoo.it/1HInMCZ"
                
@@ -38,8 +38,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)purgeCache:(id)sender {
-    NSURLCache *cache = [NSURLCache sharedURLCache];
-    [cache removeAllCachedResponses];
+    [YNFetchWebUrls purgeCache];
 }
 
 - (IBAction)onLinkClick:(UIButton *)sender {
@@ -53,7 +52,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"Request load time: %1.1f",[[NSDate date] timeIntervalSinceDate:startTime]);
                 NSString *htmlString = [[NSString alloc] initWithData:cachedResp.data encoding:CFStringConvertEncodingToNSStringEncoding(CFStringConvertIANACharSetNameToEncoding((CFStringRef)cachedResp.response.textEncodingName))];
-                [self.webView loadHTMLString:htmlString baseURL:[cachedResp.response URL]];
+                [self.webView loadHTMLString:htmlString baseURL:[cachedResp.response URL]];            
             
         });
     }];

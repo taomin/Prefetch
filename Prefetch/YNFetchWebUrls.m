@@ -57,4 +57,9 @@
     }
 }
 
++(void)purgeCache{
+    NSURLCache *cache = [NSURLCache sharedURLCache];
+    [cache removeAllCachedResponses];
+}
+
 @end

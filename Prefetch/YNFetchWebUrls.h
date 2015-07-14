@@ -11,5 +11,5 @@
 @interface YNFetchWebUrls : NSObject
 
 + (void)fetchDataForURL:(NSString *)url completion:(void(^)(NSCachedURLResponse* cachedResp))completion;
-
++ (void)purgeCache;
 @end
