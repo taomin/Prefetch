@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "PrefetchViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    PrefetchViewController *prefetch = [PrefetchViewController new];
+    self.window.rootViewController = prefetch;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

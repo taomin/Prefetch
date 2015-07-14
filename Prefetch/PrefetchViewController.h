@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PrefetchViewController.h
 //  Prefetch
 //
 //  Created by Taomin Chang on 7/13/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PrefetchViewController : UIViewController
 
 @end
-
