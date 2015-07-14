@@ -22,11 +22,11 @@
     [super viewDidLoad];
     [self createWebView];
     self.urlMap = @{
-        @"link 1": @"http://tcrn.ch/1K5g50v",
-        @"link 2": @"http://goo.gl/UeLDZj",
-        @"link 3": @"http://www.forbes.com/sites/amitchowdhry/2015/07/14/zidisha-helps-connect-lenders-with-entrepreneurs-in-developing-countries/",
-        @"link 4": @"https://github.com/FormidableLabs/radium/blob/master/docs/comparison/README.md",
-        @"link 5": @"http://yhoo.it/1HInMCZ"
+        @"link 1": @"http://finance.yahoo.com/news/mike-kail-joins-yahoo-chief-153500804.html?soc_src=mediacontentstory",
+        @"link 2": @"http://caniuse.com/#feat=dom-range,mp3,css-zoom",
+        @"link 3": @"https://medium.com/@zengabor/three-takeaways-for-web-developers-after-two-weeks-of-painfully-slow-internet-9e7f6d47726e",
+        @"link 4": @"http://www.bbc.com/news/science-environment-33524589",
+        @"link 5": @"http://www.newsy.com/49120/"
                
                
     };
@@ -48,11 +48,15 @@
     
     NSDate *startTime = [NSDate date];
     
+    
     [YNFetchWebUrls fetchDataForURL:url completion:^(NSCachedURLResponse *cachedResp) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"Request load time: %1.1f",[[NSDate date] timeIntervalSinceDate:startTime]);
-                NSString *htmlString = [[NSString alloc] initWithData:cachedResp.data encoding:CFStringConvertEncodingToNSStringEncoding(CFStringConvertIANACharSetNameToEncoding((CFStringRef)cachedResp.response.textEncodingName))];
-                [self.webView loadHTMLString:htmlString baseURL:[cachedResp.response URL]];            
+            NSStringEncoding encoding = cachedResp.response.textEncodingName == nil ? NSUTF8StringEncoding : CFStringConvertEncodingToNSStringEncoding(CFStringConvertIANACharSetNameToEncoding((CFStringRef)cachedResp.response.textEncodingName));
+
+            NSString *htmlString = [[NSString alloc] initWithData:cachedResp.data encoding:encoding];
+            
+            [self.webView loadHTMLString:htmlString baseURL:[cachedResp.response URL]];
             
         });
     }];
