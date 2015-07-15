@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B749D7481B570C36006C79E5 /* RNCachingURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = B749D7471B570C36006C79E5 /* RNCachingURLProtocol.m */; };
+		B749D74A1B570D15006C79E5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B749D7491B570D15006C79E5 /* SystemConfiguration.framework */; };
+		B749D74D1B570D92006C79E5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B749D74C1B570D92006C79E5 /* Reachability.m */; };
+		B749D7501B570DFF006C79E5 /* NSString+Sha1.m in Sources */ = {isa = PBXBuildFile; fileRef = B749D74F1B570DFF006C79E5 /* NSString+Sha1.m */; };
 		B7A488BD1B54445E000118A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A488BC1B54445E000118A7 /* main.m */; };
 		B7A488C01B54445E000118A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A488BF1B54445E000118A7 /* AppDelegate.m */; };
 		B7A488C81B54445E000118A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A488C71B54445E000118A7 /* Images.xcassets */; };
@@ -28,6 +32,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B749D7461B570C36006C79E5 /* RNCachingURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCachingURLProtocol.h; sourceTree = "<group>"; };
+		B749D7471B570C36006C79E5 /* RNCachingURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCachingURLProtocol.m; sourceTree = "<group>"; };
+		B749D7491B570D15006C79E5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B749D74B1B570D92006C79E5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B749D74C1B570D92006C79E5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B749D74E1B570DFF006C79E5 /* NSString+Sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Sha1.h"; sourceTree = "<group>"; };
+		B749D74F1B570DFF006C79E5 /* NSString+Sha1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Sha1.m"; sourceTree = "<group>"; };
 		B7A488B71B54445E000118A7 /* Prefetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prefetch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A488BB1B54445E000118A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7A488BC1B54445E000118A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B749D74A1B570D15006C79E5 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +78,7 @@
 		B7A488AE1B54445E000118A7 = {
 			isa = PBXGroup;
 			children = (
+				B749D7491B570D15006C79E5 /* SystemConfiguration.framework */,
 				B7A488B91B54445E000118A7 /* Prefetch */,
 				B7A488D31B54445E000118A7 /* PrefetchTests */,
 				B7A488B81B54445E000118A7 /* Products */,
@@ -94,6 +107,12 @@
 				B7A488E21B544492000118A7 /* PrefetchViewController.xib */,
 				B7A488E81B5447D5000118A7 /* YNFetchWebUrls.h */,
 				B7A488E91B5447D5000118A7 /* YNFetchWebUrls.m */,
+				B749D7461B570C36006C79E5 /* RNCachingURLProtocol.h */,
+				B749D7471B570C36006C79E5 /* RNCachingURLProtocol.m */,
+				B749D74B1B570D92006C79E5 /* Reachability.h */,
+				B749D74C1B570D92006C79E5 /* Reachability.m */,
+				B749D74E1B570DFF006C79E5 /* NSString+Sha1.h */,
+				B749D74F1B570DFF006C79E5 /* NSString+Sha1.m */,
 			);
 			path = Prefetch;
 			sourceTree = "<group>";
@@ -226,7 +245,10 @@
 			files = (
 				B7A488EA1B5447D5000118A7 /* YNFetchWebUrls.m in Sources */,
 				B7A488C01B54445E000118A7 /* AppDelegate.m in Sources */,
+				B749D7481B570C36006C79E5 /* RNCachingURLProtocol.m in Sources */,
 				B7A488BD1B54445E000118A7 /* main.m in Sources */,
+				B749D74D1B570D92006C79E5 /* Reachability.m in Sources */,
+				B749D7501B570DFF006C79E5 /* NSString+Sha1.m in Sources */,
 				B7A488E31B544492000118A7 /* PrefetchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +322,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"PRELINK_LIBS[arch=*]" = "//\n//  RNCachingURLProtocol.m\n//\n//  Created by Robert Napier on 1/10/12.\n//  Copyright (c) 2012 Rob Napier.\n//\n//  This code is licensed under the MIT License:\n//\n//  Permission is hereby granted, free of charge, to any person obtaining a\n//  copy of this software and associated documentation files (the \"Software\"),\n//  to deal in the Software without restriction, including without limitation\n//  the rights to use, copy, modify, merge, publish, distribute, sublicense,\n//  and/or sell copies of the Software, and to permit persons to whom the\n//  Software is furnished to do so, subject to the following conditions:\n//\n//  The above copyright notice and this permission notice shall be included in\n//  all copies or substantial portions of the Software.\n//\n//  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n//  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE\n//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\n//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER\n//  DEALINGS IN THE SOFTWARE.\n//\n\n#import \"RNCachingURLProtocol.h\"\n#import \"Reachability.h\"\n#import \"NSString+Sha1.h\"\n\n#define WORKAROUND_MUTABLE_COPY_LEAK 1\n\n#if WORKAROUND_MUTABLE_COPY_LEAK\n// required to workaround http://openradar.appspot.com/11596316\n@interface NSURLRequest(MutableCopyWorkaround)\n\n- (id) mutableCopyWorkaround;\n\n@end\n#endif\n\n@interface RNCachedData : NSObject <NSCoding>\n@property (nonatomic, readwrite, strong) NSData *data;\n@property (nonatomic, readwrite, strong) NSURLResponse *response;\n@property (nonatomic, readwrite, strong) NSURLRequest *redirectRequest;\n@end\n\nstatic NSString *RNCachingURLHeader = @\"X-RNCache\";\n\n@interface RNCachingURLProtocol () // <NSURLConnectionDelegate, NSURLConnectionDataDelegate> iOS5-only\n@property (nonatomic, readwrite, strong) NSURLConnection *connection;\n@property (nonatomic, readwrite, strong) NSMutableData *data;\n@property (nonatomic, readwrite, strong) NSURLResponse *response;\n- (void)appendData:(NSData *)newData;\n@end\n\nstatic NSObject *RNCachingSupportedSchemesMonitor;\nstatic NSSet *RNCachingSupportedSchemes;\n\n@implementation RNCachingURLProtocol\n@synthesize connection = connection_;\n@synthesize data = data_;\n@synthesize response = response_;\n\n+ (void)initialize\n{\n  if (self == [RNCachingURLProtocol class])\n  {\n    static dispatch_once_t onceToken;\n    dispatch_once(&onceToken, ^{\n      RNCachingSupportedSchemesMonitor = [NSObject new];\n    });\n        \n    [self setSupportedSchemes:[NSSet setWithObject:@\"http\"]];\n  }\n}\n\n+ (BOOL)canInitWithRequest:(NSURLRequest *)request\n{\n  // only handle http requests we haven't marked with our header.\n  if ([[self supportedSchemes] containsObject:[[request URL] scheme]] &&\n      ([request valueForHTTPHeaderField:RNCachingURLHeader] == nil))\n  {\n    return YES;\n  }\n  return NO;\n}\n\n+ (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request\n{\n  return request;\n}\n\n- (NSString *)cachePathForRequest:(NSURLRequest *)aRequest\n{\n  // This stores in the Caches directory, which can be deleted when space is low, but we only use it for offline access\n  NSString *cachesPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];\n  NSString *fileName = [[[aRequest URL] absoluteString] sha1];\n\n  return [cachesPath stringByAppendingPathComponent:fileName];\n}\n\n- (void)startLoading\n{\n  if (![self useCache]) {\n    NSMutableURLRequest *connectionRequest = \n#if WORKAROUND_MUTABLE_COPY_LEAK\n      [[self request] mutableCopyWorkaround];\n#else\n      [[self request] mutableCopy];\n#endif\n    // we need to mark this request with our header so we know not to handle it in +[NSURLProtocol canInitWithRequest:].\n    [connectionRequest setValue:@\"\" forHTTPHeaderField:RNCachingURLHeader];\n    NSURLConnection *connection = [NSURLConnection connectionWithRequest:connectionRequest\n                                                                delegate:self];\n    [self setConnection:connection];\n  }\n  else {\n    RNCachedData *cache = [NSKeyedUnarchiver unarchiveObjectWithFile:[self cachePathForRequest:[self request]]];\n    if (cache) {\n      NSData *data = [cache data];\n      NSURLResponse *response = [cache response];\n      NSURLRequest *redirectRequest = [cache redirectRequest];\n      if (redirectRequest) {\n        [[self client] URLProtocol:self wasRedirectedToRequest:redirectRequest redirectResponse:response];\n      } else {\n          \n        [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed]; // we handle caching ourselves.\n        [[self client] URLProtocol:self didLoadData:data];\n        [[self client] URLProtocolDidFinishLoading:self];\n      }\n    }\n    else {\n      [[self client] URLProtocol:self didFailWithError:[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorCannotConnectToHost userInfo:nil]];\n    }\n  }\n}\n\n- (void)stopLoading\n{\n  [[self connection] cancel];\n}\n\n// NSURLConnection delegates (generally we pass these on to our client)\n\n- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response\n{\n// Thanks to Nick Dowell https://gist.github.com/1885821\n  if (response != nil) {\n      NSMutableURLRequest *redirectableRequest =\n#if WORKAROUND_MUTABLE_COPY_LEAK\n      [request mutableCopyWorkaround];\n#else\n      [request mutableCopy];\n#endif\n    // We need to remove our header so we know to handle this request and cache it.\n    // There are 3 requests in flight: the outside request, which we handled, the internal request,\n    // which we marked with our header, and the redirectableRequest, which we're modifying here.\n    // The redirectable request will cause a new outside request from the NSURLProtocolClient, which \n    // must not be marked with our header.\n    [redirectableRequest setValue:nil forHTTPHeaderField:RNCachingURLHeader];\n\n    NSString *cachePath = [self cachePathForRequest:[self request]];\n    RNCachedData *cache = [RNCachedData new];\n    [cache setResponse:response];\n    [cache setData:[self data]];\n    [cache setRedirectRequest:redirectableRequest];\n    [NSKeyedArchiver archiveRootObject:cache toFile:cachePath];\n    [[self client] URLProtocol:self wasRedirectedToRequest:redirectableRequest redirectResponse:response];\n    return redirectableRequest;\n  } else {\n    return request;\n  }\n}\n\n- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data\n{\n  [[self client] URLProtocol:self didLoadData:data];\n  [self appendData:data];\n}\n\n- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error\n{\n  [[self client] URLProtocol:self didFailWithError:error];\n  [self setConnection:nil];\n  [self setData:nil];\n  [self setResponse:nil];\n}\n\n- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response\n{\n  [self setResponse:response];\n  [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];  // We cache ourselves.\n}\n\n- (void)connectionDidFinishLoading:(NSURLConnection *)connection\n{\n  [[self client] URLProtocolDidFinishLoading:self];\n\n  NSString *cachePath = [self cachePathForRequest:[self request]];\n  RNCachedData *cache = [RNCachedData new];\n  [cache setResponse:[self response]];\n  [cache setData:[self data]];\n  [NSKeyedArchiver archiveRootObject:cache toFile:cachePath];\n\n  [self setConnection:nil];\n  [self setData:nil];\n  [self setResponse:nil];\n}\n\n- (BOOL) useCache \n{\n    BOOL reachable = (BOOL) [[Reachability reachabilityWithHostName:[[[self request] URL] host]] currentReachabilityStatus] != NotReachable;\n    return !reachable;\n}\n\n- (void)appendData:(NSData *)newData\n{\n  if ([self data] == nil) {\n    [self setData:[newData mutableCopy]];\n  }\n  else {\n    [[self data] appendData:newData];\n  }\n}\n\n+ (NSSet *)supportedSchemes {\n  NSSet *supportedSchemes;\n  @synchronized(RNCachingSupportedSchemesMonitor)\n  {\n    supportedSchemes = RNCachingSupportedSchemes;\n  }\n  return supportedSchemes;\n}\n\n+ (void)setSupportedSchemes:(NSSet *)supportedSchemes\n{\n  @synchronized(RNCachingSupportedSchemesMonitor)\n  {\n    RNCachingSupportedSchemes = supportedSchemes;\n  }\n}\n\n@end\n\nstatic NSString *const kDataKey = @\"data\";\nstatic NSString *const kResponseKey = @\"response\";\nstatic NSString *const kRedirectRequestKey = @\"redirectRequest\";\n\n@implementation RNCachedData\n@synthesize data = data_;\n@synthesize response = response_;\n@synthesize redirectRequest = redirectRequest_;\n\n- (void)encodeWithCoder:(NSCoder *)aCoder\n{\n  [aCoder encodeObject:[self data] forKey:kDataKey];\n  [aCoder encodeObject:[self response] forKey:kResponseKey];\n  [aCoder encodeObject:[self redirectRequest] forKey:kRedirectRequestKey];\n}\n\n- (id)initWithCoder:(NSCoder *)aDecoder\n{\n  self = [super init];\n  if (self != nil) {\n    [self setData:[aDecoder decodeObjectForKey:kDataKey]];\n    [self setResponse:[aDecoder decodeObjectForKey:kResponseKey]];\n    [self setRedirectRequest:[aDecoder decodeObjectForKey:kRedirectRequestKey]];\n  }\n\n  return self;\n}\n\n@end\n\n#if WORKAROUND_MUTABLE_COPY_LEAK\n@implementation NSURLRequest(MutableCopyWorkaround)\n\n- (id) mutableCopyWorkaround {\n    NSMutableURLRequest *mutableURLRequest = [[NSMutableURLRequest alloc] initWithURL:[self URL]\n                                                                          cachePolicy:[self cachePolicy]\n                                                                      timeoutInterval:[self timeoutInterval]];\n    [mutableURLRequest setAllHTTPHeaderFields:[self allHTTPHeaderFields]];\n    if ([self HTTPBodyStream]) {\n        [mutableURLRequest setHTTPBodyStream:[self HTTPBodyStream]];\n    } else {\n        [mutableURLRequest setHTTPBody:[self HTTPBody]];\n    }\n    [mutableURLRequest setHTTPMethod:[self HTTPMethod]];\n    \n    return mutableURLRequest;\n}\n\n@end\n";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -414,6 +437,7 @@
 				B7A488DC1B54445E000118A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B7A488DD1B54445E000118A7 /* Build configuration list for PBXNativeTarget "PrefetchTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +446,7 @@
 				B7A488DF1B54445E000118A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

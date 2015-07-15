@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface YNFetchWebUrls : NSObject
-
-+ (void)fetchDataForURL:(NSString *)url completion:(void(^)(NSCachedURLResponse* cachedResp))completion;
++ (NSMutableURLRequest *)getURLRequest:(NSString *)url;
++ (NSCachedURLResponse *)loadURLDataFromCache:(NSString *)url;
++ (void)prefetchDataForURL:(NSString *)url;
 + (void)purgeCache;
 @end

@@ -23,14 +23,18 @@
     [self createWebView];
     self.urlMap = @{
         @"link 1": @"http://finance.yahoo.com/news/mike-kail-joins-yahoo-chief-153500804.html?soc_src=mediacontentstory",
-        @"link 2": @"http://caniuse.com/#feat=dom-range,mp3,css-zoom",
+        @"link 2": @"http://www.yahoo.com",
         @"link 3": @"https://medium.com/@zengabor/three-takeaways-for-web-developers-after-two-weeks-of-painfully-slow-internet-9e7f6d47726e",
-        @"link 4": @"http://www.bbc.com/news/science-environment-33524589",
+        @"link 4": @"http://www.theverge.com/2015/7/15/8950481/microsoft-windows-10-rtm-date",
         @"link 5": @"http://www.newsy.com/49120/"
-               
-               
     };
     // Do any additional setup after loading the view from its nib.
+
+    for (NSString *key in self.urlMap) {
+        NSString *value = self.urlMap[key];
+        [YNFetchWebUrls prefetchDataForURL:value];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,18 +52,22 @@
     
     NSDate *startTime = [NSDate date];
     
+    NSCachedURLResponse *cachedResp = [YNFetchWebUrls loadURLDataFromCache:url];
     
-    [YNFetchWebUrls fetchDataForURL:url completion:^(NSCachedURLResponse *cachedResp) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+    if (cachedResp != nil) {
             NSLog(@"Request load time: %1.1f",[[NSDate date] timeIntervalSinceDate:startTime]);
             NSStringEncoding encoding = cachedResp.response.textEncodingName == nil ? NSUTF8StringEncoding : CFStringConvertEncodingToNSStringEncoding(CFStringConvertIANACharSetNameToEncoding((CFStringRef)cachedResp.response.textEncodingName));
-
+            
             NSString *htmlString = [[NSString alloc] initWithData:cachedResp.data encoding:encoding];
             
             [self.webView loadHTMLString:htmlString baseURL:[cachedResp.response URL]];
-            
-        });
-    }];
+
+    } else {
+        NSMutableURLRequest *urlRequest = [YNFetchWebUrls getURLRequest:url];
+        [urlRequest setValue:@"1" forHTTPHeaderField:@"X-RNPrefetch"];
+        [self.webView loadRequest:urlRequest];
+    }
+
 
 }
 

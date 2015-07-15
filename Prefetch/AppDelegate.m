@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PrefetchViewController.h"
-
+#import "RNCachingURLProtocol.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [NSURLProtocol registerClass:[RNCachingURLProtocol class]];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     PrefetchViewController *prefetch = [PrefetchViewController new];
     self.window.rootViewController = prefetch;
